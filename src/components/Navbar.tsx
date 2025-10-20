@@ -5,7 +5,6 @@ import { Menu, X, Zap, Calendar } from 'lucide-react';
 import BookingModal from './BookingModal';
 
 const navLinks = [
-  { name: 'Home', path: '/', hash: '' },
   { name: 'About', path: '/', hash: '#about' },
   { name: 'Services', path: '/', hash: '#services' },
   { name: 'Projects', path: '/', hash: '#projects' },
