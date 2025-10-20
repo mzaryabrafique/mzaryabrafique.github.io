@@ -90,7 +90,7 @@ export default function ServicesDetail() {
 
     const message = `Hi! I'm ${formData.name}%0A%0A${formData.message}%0A%0ARequested Services:%0A%0A${serviceDetails}%0A%0AEmail: ${formData.email}`;
 
-    window.open(`https://wa.me/1234567890?text=${message}`, '_blank');
+    window.open(`https://wa.me/+923347860477?text=${message}`, '_blank');
     resetForm();
   };
 
