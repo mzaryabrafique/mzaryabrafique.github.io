@@ -1,26 +1,39 @@
 import { ExternalLink, Github } from 'lucide-react';
+import mapRepute from "../assets/projects/MapRepute-main.png"
+import chainTrustAI from "../assets/projects/chaintrustai.png"
+import distributorPro from "../assets/projects/distibutorpro.png"
+import nftMarkteplace from "../assets/projects/nft-marketplace.png"
 
 const projects = [
+   {
+    title: 'MapRepute',
+    description: 'Unlock AI-powered insights from your Google Maps reviews. Analyze sentiment, track competitors, and enhance your local presence.',
+    tags: ['AI', 'React', 'Google Map API', 'Gemini'],
+    gradient: 'from-[#00F6FF] to-[#00C4CC]',
+    demoLink: "https://maprepute.vercel.app",
+    github: "#",
+    image: mapRepute,
+  },
   {
     title: 'ChainTrust AI',
     description: 'Institutional-grade AI risk and review engine for Web3 projects, combining machine learning with blockchain analytics.',
     tags: ['AI', 'Blockchain', 'Risk Analysis', 'Machine Learning'],
     gradient: 'from-[#00F6FF] to-[#00C4CC]',
-    image: 'https://images.pexels.com/photos/8728380/pexels-photo-8728380.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: chainTrustAI,
   },
   {
-    title: 'PortfolioToken (BSC)',
-    description: 'Tokenized portfolio management smart contract on Binance Smart Chain with automated rebalancing and yield optimization.',
-    tags: ['Solidity', 'BSC', 'DeFi', 'Smart Contracts'],
+    title: 'DistributorPro - Distributor Management System',
+    description: 'Distributor Management System is a complete web + mobile solution for distributors. The Android app lets order bookers log in, add shops, and create bookings (even offline).',
+    tags: ['Node.js', 'React', 'PostgreSQL', 'TypeScript'],
     gradient: 'from-[#FFD700] to-[#FFA500]',
-    image: 'https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: distributorPro,
   },
   {
     title: 'NFT Marketplace',
     description: 'Ethereum-based NFT platform with wallet integration, minting tools, and decentralized storage via IPFS.',
-    tags: ['Ethereum', 'NFT', 'IPFS', 'Web3'],
+    tags: ['Ethereum', 'NFT', 'IPFS', 'Web3', 'Solidity', 'Hardhat'],
     gradient: 'from-[#00F6FF] to-[#FFD700]',
-    image: 'https://images.pexels.com/photos/7567480/pexels-photo-7567480.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: nftMarkteplace,
   },
   {
     title: 'Crypto Funding dApp',
@@ -101,14 +114,14 @@ export default function Projects() {
                 </div>
 
                 <div className="flex gap-4">
-                  <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#00F6FF]/10 text-[#00F6FF] hover:bg-[#00F6FF] hover:text-[#0A0F1C] transition-all duration-300 text-sm font-semibold">
+                  <a href={project.demoLink} target="_blank" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#00F6FF]/10 text-[#00F6FF] hover:bg-[#00F6FF] hover:text-[#0A0F1C] transition-all duration-300 text-sm font-semibold">
                     <ExternalLink size={16} />
                     Demo
-                  </button>
-                  <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700 transition-all duration-300 text-sm font-semibold">
+                  </a>
+                  <a href='#' target="_blank" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700 transition-all duration-300 text-sm font-semibold">
                     <Github size={16} />
                     Code
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
