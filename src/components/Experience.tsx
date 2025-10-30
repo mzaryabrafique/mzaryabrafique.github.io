@@ -2,9 +2,26 @@ import { Briefcase } from 'lucide-react';
 
 const experiences = [
   {
+    role: 'Software Engineer Specializing in Full Stack Development, AI & Blockchain',
+    company: 'Freelancing',
+    period: 'Present',
+    description: 'Software Engineer specializing in Full Stack Development, AI & Blockchain, focused on building innovative, scalable, and intelligent applications across Web3 and automation ecosystems.',
+    achievements: [
+      'Full-Stack Web Apps: Build the backend and frontend.',
+      'AI & Web3 Automation: Workflow bots, data pipelines, and smart automations.',
+      'SaaS & MVP Development: From idea validation to a working product in weeks, not months.',
+      'Smart Contract Development, Token Launches, gas cost reduction, & Custom Crypto Bots, automate business logic, and save valuable time.',
+      'NFT Marketplace Creation opens doors to new revenue streams and digital communities.',
+      'Wallet Integration & Tokenization seamless onboarding that boosts adoption.',
+      'Bridge Development & Multi-Network Integrations, break silos and reach new blockchain ecosystems.',
+      'EVM & Non-EVM Expertise (Ethereum, Polygon, BNB Chain, Solana, Stellar), your project, anywhere you want it to grow.',
+      'Layer 1 Blockchain Development Expertise (Substrate, Cosmos, Rust, Golang), launch your own secure & scalable blockchain network.',
+    ],
+  },
+  {
     role: 'Blockchain Developer',
     company: 'InvoZone',
-    period: '2022 - Present',
+    period: 'March 2022 - October 2025',
     description: 'Leading development of multichain dApps, NFT platforms, Layer 2 rollups, and decentralized identity systems. Architecting smart contracts and Web3 integrations.',
     achievements: [
       'Built institutional-grade blockchain solutions',
