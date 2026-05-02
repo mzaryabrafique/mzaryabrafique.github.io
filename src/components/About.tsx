@@ -20,41 +20,37 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-[#0A0F1C] relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 right-1/4 w-64 h-64 bg-[#FFD700] rounded-full filter blur-[100px]"></div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            About <span className="text-[#00F6FF]">Me</span>
+    <section id="about" className="py-32 bg-brand-bg relative overflow-hidden border-t border-brand-border">
+      <div className="max-w-[1500px] mx-auto px-6 relative z-10">
+        <div className="mb-24 flex flex-col items-center">
+          <span className="uppercase tracking-widest text-[12px] text-brand-tertiary mb-4 font-medium">Background</span>
+          <h2 className="text-[48px] font-normal text-brand-primary tracking-tight mb-4 text-center">
+            About Me
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#00F6FF] to-[#FFD700] mx-auto"></div>
         </div>
 
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-lg text-gray-300 leading-relaxed mb-6">
-            I'm <span className="text-[#00F6FF] font-semibold">Muhammad Zaryab Rafique</span>, a passionate technologist
+        <div className="max-w-3xl mx-auto text-center mb-24">
+          <p className="text-[20px] text-brand-secondary leading-[1.4] mb-8 font-normal">
+            I'm <span className="text-brand-primary">Muhammad Zaryab Rafique</span>, a passionate technologist
             at the intersection of artificial intelligence and blockchain innovation. With years of experience building
             cutting-edge solutions, I transform complex challenges into elegant, scalable systems.
           </p>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            <span className="text-[#FFD700] font-semibold">"From Smart Contracts to Smart Agents — I craft technology that thinks, connects, and scales."</span>
+          <p className="text-[20px] text-brand-tertiary leading-[1.4] font-normal italic">
+            "From Smart Contracts to Smart Agents, I craft technology that thinks, connects, and scales."
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {highlights.map((highlight, index) => (
             <div
               key={index}
-              className="group p-8 rounded-xl bg-gradient-to-br from-[#0F1829] to-[#0A0F1C] border border-[#00F6FF]/20 hover:border-[#00F6FF] transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,246,255,0.2)] transform hover:-translate-y-2"
+              className="p-8 rounded-card bg-brand-bg border border-brand-border transition-colors duration-300 hover:bg-brand-surface"
             >
-              <div className="w-16 h-16 mb-6 rounded-lg bg-gradient-to-br from-[#00F6FF] to-[#00C4CC] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <highlight.icon className="text-[#0A0F1C]" size={32} />
+              <div className="w-12 h-12 mb-6 rounded-lg bg-brand-surface border border-brand-border flex items-center justify-center">
+                <highlight.icon className="text-brand-secondary" size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">{highlight.title}</h3>
-              <p className="text-gray-400 leading-relaxed">{highlight.description}</p>
+              <h3 className="text-[22px] font-medium text-brand-primary mb-3 tracking-normal">{highlight.title}</h3>
+              <p className="text-[18px] text-brand-secondary leading-[1.3]">{highlight.description}</p>
             </div>
           ))}
         </div>

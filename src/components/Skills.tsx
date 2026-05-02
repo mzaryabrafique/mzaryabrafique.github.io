@@ -27,28 +27,24 @@ export default function Skills() {
   const [activeCategory, setActiveCategory] = useState(0);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-[#0F1829] to-[#0A0F1C] relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute bottom-20 left-1/4 w-64 h-64 bg-[#00F6FF] rounded-full filter blur-[100px]"></div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Skills & <span className="text-[#00F6FF]">Technologies</span>
+    <section id="skills" className="py-32 bg-brand-bg relative overflow-hidden border-t border-brand-border">
+      <div className="max-w-[1500px] mx-auto px-6 relative z-10">
+        <div className="mb-24 flex flex-col items-center">
+          <span className="uppercase tracking-widest text-[12px] text-brand-tertiary mb-4 font-medium">Technologies</span>
+          <h2 className="text-[48px] font-normal text-brand-primary tracking-tight mb-4 text-center">
+            Skills & Stack
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#00F6FF] to-[#FFD700] mx-auto"></div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-16">
           {skillCategories.map((category, index) => (
             <button
               key={index}
               onClick={() => setActiveCategory(index)}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+              className={`px-6 py-3 rounded-button font-medium transition-all duration-300 text-[16px] ${
                 activeCategory === index
-                  ? 'bg-gradient-to-r from-[#00F6FF] to-[#00C4CC] text-[#0A0F1C] shadow-[0_0_20px_rgba(0,246,255,0.5)]'
-                  : 'bg-[#0A0F1C] text-gray-400 border border-[#00F6FF]/20 hover:border-[#00F6FF] hover:text-[#00F6FF]'
+                  ? 'bg-brand-button text-brand-primary border border-transparent'
+                  : 'bg-brand-surface text-brand-secondary border border-brand-border hover:text-brand-primary hover:border-brand-tertiary'
               }`}
             >
               {category.name}
@@ -56,19 +52,19 @@ export default function Skills() {
           ))}
         </div>
 
-        <div className="min-h-[300px]">
+        <div className="min-h-[300px] max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {skillCategories[activeCategory].skills.map((skill, index) => (
               <div
                 key={index}
-                className="group p-4 rounded-lg bg-[#0A0F1C] border border-[#00F6FF]/20 hover:border-[#00F6FF] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,246,255,0.2)] transform hover:-translate-y-1 text-center"
+                className="p-4 rounded-[6px] bg-brand-surface border border-brand-border transition-colors duration-300 hover:bg-brand-bg flex items-center justify-center text-center"
                 style={{
-                  animation: `fadeInUp 0.5s ease-out ${index * 0.05}s both`,
+                  animation: `fadeInUp 0.3s ease-out ${index * 0.03}s both`,
                 }}
               >
-                <div className="text-white font-medium group-hover:text-[#00F6FF] transition-colors duration-300">
+                <span className="text-brand-secondary font-medium tracking-wide">
                   {skill}
-                </div>
+                </span>
               </div>
             ))}
           </div>

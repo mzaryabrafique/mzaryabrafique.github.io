@@ -22,38 +22,29 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0A0F1C] via-[#0F1829] to-[#0A0F1C]">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#00F6FF] rounded-full filter blur-[120px] animate-pulse"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#FFD700] rounded-full filter blur-[120px] animate-pulse delay-1000"></div>
-        </div>
-
-        <div className="absolute inset-0 grid-background"></div>
-      </div>
-
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-        <div className="mb-8 inline-block">
-          <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#00F6FF] to-[#FFD700] p-1 animate-float">
-            <div className="w-full h-full rounded-full bg-[#0A0F1C] flex items-center justify-center text-4xl font-bold text-[#00F6FF]">
-              <img src={imageMy} />
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-bg pt-20 pb-32">
+      <div className="relative z-10 w-full max-w-[1500px] mx-auto px-6 text-center mt-12 md:mt-24">
+        <div className="mb-12 inline-block">
+          <div className="w-28 h-28 rounded-full border border-brand-border p-1 mx-auto bg-brand-surface">
+            <div className="w-full h-full rounded-full bg-brand-bg flex items-center justify-center overflow-hidden">
+              <img src={imageMy} className="w-full h-full object-cover" alt="Zaryab" />
             </div>
           </div>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
+        <h1 className="text-[48px] md:text-[80px] leading-[1.0] tracking-tightest mb-8 text-brand-primary font-matter">
           Building the Future of
-          <span className="block mt-2 bg-gradient-to-r from-[#00F6FF] to-[#FFD700] bg-clip-text text-transparent">
+          <span className="block mt-2 text-brand-secondary">
             Intelligence & Trust
           </span>
         </h1>
 
-        <p className="text-xl md:text-2xl text-gray-300 mb-8">
+        <p className="text-xl md:text-[24px] text-brand-secondary mb-12 tracking-tight">
           AI, Blockchain, and Web Innovation
         </p>
 
-        <div className="h-16 flex items-center justify-center mb-12">
-          <div className="text-2xl md:text-3xl font-semibold text-[#00F6FF] transition-all duration-500">
+        <div className="h-16 flex items-center justify-center mb-16">
+          <div className="text-[20px] md:text-[24px] font-normal text-brand-tertiary transition-opacity duration-500 uppercase tracking-widest">
             {roles[currentRole]}
           </div>
         </div>
@@ -61,14 +52,14 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={() => setIsBookingModalOpen(true)}
-            className="flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#00F6FF] to-[#00C4CC] text-[#0A0F1C] font-semibold rounded-lg hover:shadow-[0_0_30px_rgba(0,246,255,0.5)] transition-all duration-300 transform hover:scale-105"
+            className="flex items-center justify-center gap-2 px-8 py-4 bg-brand-button text-brand-secondary font-medium rounded-button hover:bg-brand-button/80 transition-all duration-300"
           >
             <Calendar size={20} />
             Schedule Meeting
           </button>
           <a
             href="#projects"
-            className="px-8 py-4 border-2 border-[#00F6FF] text-[#00F6FF] font-semibold rounded-lg hover:bg-[#00F6FF] hover:text-[#0A0F1C] transition-all duration-300"
+            className="flex items-center justify-center px-8 py-4 bg-brand-surface border border-brand-border text-brand-secondary font-medium rounded-button hover:text-brand-primary transition-all duration-300"
           >
             Explore My Work
           </a>
@@ -77,7 +68,7 @@ export default function Hero() {
 
       <a
         href="#about"
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-[#00F6FF] animate-bounce"
+        className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-brand-tertiary hover:text-brand-primary transition-colors"
       >
         <ChevronDown size={32} />
       </a>

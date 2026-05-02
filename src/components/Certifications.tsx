@@ -5,25 +5,21 @@ const certifications = [
     title: 'Certified Blockchain Practitioner',
     issuer: 'The SecOps Group',
     icon: Award,
-    color: 'from-[#00F6FF] to-[#00C4CC]',
   },
   {
     title: 'IBM Blockchain Foundation Developer',
     issuer: 'Cognitive Class',
     icon: Award,
-    color: 'from-[#FFD700] to-[#FFA500]',
   },
   {
     title: 'Backend Development & APIs',
     issuer: 'freeCodeCamp',
     icon: Award,
-    color: 'from-[#00C4CC] to-[#00F6FF]',
   },
   {
     title: 'Blockchain Specialization',
     issuer: 'Coursera',
     icon: Award,
-    color: 'from-[#FFA500] to-[#FFD700]',
   },
 ];
 
@@ -35,52 +31,48 @@ const education = {
 
 export default function Certifications() {
   return (
-    <section className="py-24 bg-[#0A0F1C] relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-[#00F6FF] rounded-full filter blur-[100px]"></div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Certifications & <span className="text-[#00F6FF]">Education</span>
+    <section id="certifications" className="py-32 bg-brand-bg relative overflow-hidden border-t border-brand-border">
+      <div className="max-w-[1500px] mx-auto px-6 relative z-10">
+        <div className="mb-24 flex flex-col items-center">
+          <span className="uppercase tracking-widest text-[12px] text-brand-tertiary mb-4 font-medium">Achievements</span>
+          <h2 className="text-[48px] font-normal text-brand-primary tracking-tight mb-4 text-center">
+            Certifications & Education
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#00F6FF] to-[#FFD700] mx-auto"></div>
         </div>
 
         <div className="mb-16 flex justify-center">
-          <div className="group p-8 rounded-xl bg-gradient-to-br from-[#0F1829] to-[#0A0F1C] border-2 border-[#FFD700] hover:border-[#00F6FF] transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,215,0,0.3)] transform hover:-translate-y-2 max-w-md w-full">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-[#FFD700] to-[#FFA500] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <education.icon className="text-[#0A0F1C]" size={32} />
+          <div className="p-8 rounded-card bg-brand-surface border border-brand-border transition-colors duration-300 hover:bg-brand-bg max-w-md w-full">
+            <div className="flex items-center gap-6">
+              <div className="w-16 h-16 rounded-lg bg-brand-bg border border-brand-border flex items-center justify-center transition-transform duration-300">
+                <education.icon className="text-brand-secondary" size={28} />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white group-hover:text-[#FFD700] transition-colors duration-300">
+                <h3 className="text-[22px] font-medium text-brand-primary mb-1">
                   {education.degree}
                 </h3>
-                <p className="text-[#FFD700] font-semibold">{education.institution}</p>
+                <p className="text-brand-secondary text-[16px]">{education.institution}</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="group p-6 rounded-xl bg-gradient-to-br from-[#0F1829] to-[#0A0F1C] border border-[#00F6FF]/20 hover:border-[#00F6FF] transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,246,255,0.2)] transform hover:-translate-y-2"
+              className="p-6 rounded-[12px] bg-brand-surface border border-brand-border transition-colors duration-300 hover:bg-brand-bg"
             >
-              <div className="flex items-start gap-4">
+              <div className="flex items-center gap-5">
                 <div
-                  className={`w-12 h-12 rounded-lg bg-gradient-to-br ${cert.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}
+                  className="w-12 h-12 rounded-lg bg-brand-bg border border-brand-border flex items-center justify-center transition-transform duration-300 flex-shrink-0"
                 >
-                  <cert.icon className="text-[#0A0F1C]" size={24} />
+                  <cert.icon className="text-brand-secondary" size={20} />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#00F6FF] transition-colors duration-300">
+                  <h3 className="text-[18px] font-medium text-brand-primary mb-1">
                     {cert.title}
                   </h3>
-                  <p className="text-gray-400">{cert.issuer}</p>
+                  <p className="text-brand-tertiary text-[14px]">{cert.issuer}</p>
                 </div>
               </div>
             </div>

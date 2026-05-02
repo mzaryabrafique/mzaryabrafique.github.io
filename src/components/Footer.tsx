@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, Send, Mail, MapPin, Code2 } from 'lucide-react';
 
 const quickLinks = [
@@ -19,52 +18,41 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-br from-[#0F1829] to-[#0A0F1C] border-t border-[#00F6FF]/20 overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#00F6FF] rounded-full filter blur-[120px]"></div>
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#FFD700] rounded-full filter blur-[120px]"></div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-6 py-16 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
-        >
+    <footer className="bg-brand-bg border-t border-brand-border">
+      <div className="max-w-[1500px] mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#00F6FF] to-[#00C4CC] flex items-center justify-center">
-                <Code2 className="text-[#0A0F1C]" size={24} />
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-[6px] bg-brand-surface border border-brand-border flex items-center justify-center">
+                <Code2 className="text-brand-secondary" size={20} />
               </div>
-              <h3 className="text-2xl font-bold text-white">Muhammad Zaryab Rafique</h3>
+              <h3 className="text-[20px] font-medium text-brand-primary tracking-tight">Muhammad Zaryab Rafique</h3>
             </div>
-            <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
+            <p className="text-brand-secondary mb-8 leading-[1.5] max-w-md text-[15px]">
               Building the Future with AI, Blockchain & Web Innovation.
             </p>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 text-gray-400 hover:text-[#00F6FF] transition-colors duration-300">
-                <Mail size={18} className="text-[#00F6FF]" />
-                <a href="mailto:muhammadzaryabrafique@gmail.com">muhammadzaryabrafique@gmail.com</a>
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 text-brand-secondary hover:text-brand-primary transition-colors duration-300">
+                <Mail size={16} />
+                <a href="mailto:muhammadzaryabrafique@gmail.com" className="text-[14px]">muhammadzaryabrafique@gmail.com</a>
               </div>
-              <div className="flex items-center gap-3 text-gray-400">
-                <MapPin size={18} className="text-[#00F6FF]" />
-                <span>Pakistan</span>
+              <div className="flex items-center gap-3 text-brand-secondary">
+                <MapPin size={16} />
+                <span className="text-[14px]">Pakistan</span>
               </div>
             </div>
           </div>
 
           <div>
-            <h4 className="text-lg font-bold text-white mb-4">Quick Links</h4>
-            <ul className="space-y-3">
+            <h4 className="text-[16px] font-medium text-brand-primary mb-6 tracking-tight">Quick Links</h4>
+            <ul className="space-y-4">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-[#00F6FF] transition-colors duration-300 flex items-center gap-2 group"
+                    className="text-brand-secondary text-[14px] hover:text-brand-primary transition-colors duration-300 flex items-center gap-2 group"
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-[#00F6FF] transition-all duration-300"></span>
+                    <span className="w-1 h-1 rounded-full bg-brand-tertiary group-hover:bg-brand-primary transition-colors duration-300"></span>
                     {link.name}
                   </a>
                 </li>
@@ -73,45 +61,31 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold text-white mb-4">Connect</h4>
+            <h4 className="text-[16px] font-medium text-brand-primary mb-6 tracking-tight">Connect</h4>
             <div className="flex flex-wrap gap-3">
               {socialLinks.map((social) => (
-                <motion.a
+                <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#0F1829] to-[#0A0F1C] border border-[#00F6FF]/20 hover:border-[#00F6FF] flex items-center justify-center hover:shadow-[0_0_20px_rgba(0,246,255,0.3)] transition-all duration-300 group"
+                  className="w-10 h-10 rounded-[6px] bg-brand-surface border border-brand-border flex items-center justify-center hover:bg-brand-bg transition-all duration-300 group"
                   aria-label={social.label}
                 >
-                  <social.icon size={20} className="text-gray-400 group-hover:text-[#00F6FF] transition-colors duration-300" />
-                </motion.a>
+                  <social.icon size={18} className="text-brand-secondary group-hover:text-brand-primary transition-colors duration-300" />
+                </a>
               ))}
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="pt-8 border-t border-[#00F6FF]/10"
-        >
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm text-center md:text-left">
-              © 2025 Muhammad Zaryab Rafique
-            </p>
-            <div className="flex items-center gap-2 text-sm text-gray-500">
-              <span>Made with</span>
-              <span className="text-[#FFD700]">★</span>
-              <span>for innovation</span>
-            </div>
-          </div>
-        </motion.div>
+        <div className="pt-8 border-t border-brand-border flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-brand-tertiary text-[14px] text-center md:text-left">
+            © {new Date().getFullYear()} Muhammad Zaryab Rafique
+          </p>
+        </div>
       </div>
     </footer>
   );
 }
+

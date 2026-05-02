@@ -55,49 +55,50 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section className="py-24 bg-gradient-to-br from-[#0F1829] to-[#0A0F1C] relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-1/4 w-64 h-64 bg-[#FFD700] rounded-full filter blur-[100px]"></div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Work <span className="text-[#00F6FF]">Experience</span>
+    <section id="experience" className="py-32 bg-brand-bg relative overflow-hidden border-t border-brand-border">
+      <div className="max-w-[1500px] mx-auto px-6 relative z-10">
+        <div className="mb-24 flex flex-col items-center">
+          <span className="uppercase tracking-widest text-[12px] text-brand-tertiary mb-4 font-medium">Timeline</span>
+          <h2 className="text-[48px] font-normal text-brand-primary tracking-tight mb-4 text-center">
+            Work Experience
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#00F6FF] to-[#FFD700] mx-auto"></div>
         </div>
 
-        <div className="relative max-w-3xl mx-auto">
-          <div className="absolute left-6 top-0 h-full w-0.5 bg-gradient-to-b from-[#00F6FF] via-[#00C4CC] to-[#FFD700]"></div>
+        <div className="relative max-w-4xl mx-auto">
+          <div className="absolute left-8 top-0 bottom-0 w-[1px] bg-brand-border hidden md:block"></div>
 
           {experiences.map((exp, index) => (
-            <div key={index} className="relative mb-12 pl-20">
-              <div className="absolute left-0 top-0">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#00F6FF] to-[#00C4CC] flex items-center justify-center shadow-[0_0_20px_rgba(0,246,255,0.5)]">
-                  <Briefcase className="text-[#0A0F1C]" size={24} />
+            <div key={index} className="relative mb-12 md:pl-24">
+              <div className="hidden md:flex absolute left-[8px] top-0 transform -translate-x-1/2">
+                <div className="w-12 h-12 rounded-lg bg-brand-surface border border-brand-border flex items-center justify-center">
+                  <Briefcase className="text-brand-secondary" size={20} />
                 </div>
               </div>
 
-              <div className="p-6 rounded-xl bg-gradient-to-br from-[#0F1829] to-[#0A0F1C] border border-[#00F6FF]/20 hover:border-[#00F6FF] transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,246,255,0.2)]">
-                <div className="mb-4">
-                  <h3 className="text-2xl font-bold text-white mb-2">{exp.role}</h3>
-                  <div className="flex items-center gap-2 text-[#00F6FF] font-semibold">
-                    <span>{exp.company}</span>
-                    <span className="text-gray-500">•</span>
-                    <span className="text-gray-400">{exp.period}</span>
+              <div className="p-8 rounded-card bg-brand-bg border border-brand-border transition-colors duration-300 hover:bg-brand-surface relative">
+                <div className="mb-6 flex flex-col md:flex-row md:items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-[22px] font-medium text-brand-primary mb-2 leading-[1.3]">{exp.role}</h3>
+                    <div className="flex items-center gap-2 text-brand-secondary font-medium">
+                      <span>{exp.company}</span>
+                      <span className="text-brand-tertiary">•</span>
+                      <span className="text-brand-tertiary">{exp.period}</span>
+                    </div>
+                  </div>
+                  <div className="md:hidden w-10 h-10 rounded-lg bg-brand-surface border border-brand-border flex items-center justify-center mb-4">
+                     <Briefcase className="text-brand-secondary" size={18} />
                   </div>
                 </div>
 
-                <p className="text-gray-300 mb-4 leading-relaxed">{exp.description}</p>
+                <p className="text-[16px] text-brand-secondary mb-6 leading-[1.5]">{exp.description}</p>
 
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {exp.achievements.map((achievement, achIndex) => (
                     <li
                       key={achIndex}
-                      className="flex items-start gap-2 text-gray-400"
+                      className="flex items-start gap-3 text-brand-tertiary text-[15px] leading-[1.4]"
                     >
-                      <span className="text-[#00F6FF] mt-1.5">▹</span>
+                      <span className="text-brand-secondary mt-1 text-[12px]">▹</span>
                       <span>{achievement}</span>
                     </li>
                   ))}

@@ -20,63 +20,53 @@ export default function Contact() {
       icon: Github,
       label: 'GitHub',
       href: 'https://github.com/mzaryabrafique',
-      color: 'hover:text-white',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
       href: 'https://www.linkedin.com/in/mzaryabrafique',
-      color: 'hover:text-[#0077B5]',
     },
     {
       icon: Twitter,
       label: 'Twitter',
       href: 'https://twitter.com/zaryab_rafique',
-      color: 'hover:text-[#1DA1F2]',
     },
      {
       icon: Send,
       label: 'Telegram',
       href: 'https://t.me/zaryabrafique',
-      color: 'hover:text-[#1DA1F2]',
     },
     {
       icon: Mail,
       label: 'Email',
       href: 'mailto:muhammadzaryabrafique@gmail.com',
-      color: 'hover:text-[#FFD700]',
     },
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-[#0F1829] to-[#0A0F1C] relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-1/3 w-96 h-96 bg-[#00F6FF] rounded-full filter blur-[120px]"></div>
-        <div className="absolute bottom-20 right-1/3 w-96 h-96 bg-[#FFD700] rounded-full filter blur-[120px]"></div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Get In <span className="text-[#00F6FF]">Touch</span>
+    <section id="contact" className="py-32 bg-brand-bg relative overflow-hidden border-t border-brand-border">
+      <div className="max-w-[1500px] mx-auto px-6 relative z-10">
+        <div className="mb-24 flex flex-col items-center">
+          <span className="uppercase tracking-widest text-[12px] text-brand-tertiary mb-4 font-medium">Contact</span>
+          <h2 className="text-[48px] font-normal text-brand-primary tracking-tight mb-4 text-center">
+            Get In Touch
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#00F6FF] to-[#FFD700] mx-auto mb-6"></div>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-6">
+          <p className="text-brand-secondary text-[20px] max-w-2xl mx-auto mb-8 text-center font-normal">
             Let's build the next AI x Blockchain innovation together
           </p>
           <button
             onClick={() => setIsBookingModalOpen(true)}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#00F6FF] to-[#00C4CC] text-[#0A0F1C] font-semibold rounded-lg hover:shadow-[0_0_30px_rgba(0,246,255,0.5)] transition-all duration-300 transform hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-brand-button text-brand-secondary font-medium rounded-button hover:bg-brand-button/80 transition-all duration-300"
           >
             <Calendar size={20} />
             Book a Consultation
           </button>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-6">Connect With Me</h3>
-            <p className="text-gray-300 mb-8 leading-relaxed">
+            <h3 className="text-[24px] font-medium text-brand-primary mb-6 tracking-tight">Connect With Me</h3>
+            <p className="text-brand-secondary mb-8 leading-[1.5] text-[16px]">
               I'm always interested in discussing new projects, creative ideas, or opportunities to build innovative solutions at the intersection of AI and blockchain technology.
             </p>
 
@@ -87,12 +77,12 @@ export default function Contact() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center gap-4 p-4 rounded-lg bg-[#0A0F1C] border border-[#00F6FF]/20 hover:border-[#00F6FF] transition-all duration-300 group ${link.color}`}
+                  className="flex items-center gap-5 p-5 rounded-[8px] bg-brand-surface border border-brand-border hover:bg-brand-bg hover:border-brand-tertiary transition-all duration-300 group"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#00F6FF] to-[#00C4CC] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <link.icon className="text-[#0A0F1C]" size={24} />
+                  <div className="w-12 h-12 rounded-[6px] bg-brand-bg border border-brand-border flex items-center justify-center transition-transform duration-300">
+                    <link.icon className="text-brand-secondary group-hover:text-brand-primary transition-colors" size={20} />
                   </div>
-                  <span className="text-white font-semibold group-hover:text-[#00F6FF] transition-colors duration-300">
+                  <span className="text-brand-secondary font-medium group-hover:text-brand-primary transition-colors duration-300">
                     {link.label}
                   </span>
                 </a>
@@ -103,7 +93,7 @@ export default function Contact() {
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-white font-semibold mb-2">
+                <label htmlFor="name" className="block text-brand-primary font-medium mb-2 text-[14px]">
                   Name
                 </label>
                 <input
@@ -111,14 +101,14 @@ export default function Contact() {
                   id="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-[#0A0F1C] border-2 border-[#00F6FF]/20 focus:border-[#00F6FF] text-white placeholder-gray-500 outline-none transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-[6px] bg-brand-surface border border-brand-border focus:border-brand-tertiary focus:ring-0 text-brand-primary placeholder:text-brand-tertiary outline-none transition-all duration-300"
                   placeholder="Your Name"
                   required
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-white font-semibold mb-2">
+                <label htmlFor="email" className="block text-brand-primary font-medium mb-2 text-[14px]">
                   Email
                 </label>
                 <input
@@ -126,14 +116,14 @@ export default function Contact() {
                   id="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-[#0A0F1C] border-2 border-[#00F6FF]/20 focus:border-[#00F6FF] text-white placeholder-gray-500 outline-none transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-[6px] bg-brand-surface border border-brand-border focus:border-brand-tertiary focus:ring-0 text-brand-primary placeholder:text-brand-tertiary outline-none transition-all duration-300"
                   placeholder="your.email@example.com"
                   required
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-white font-semibold mb-2">
+                <label htmlFor="message" className="block text-brand-primary font-medium mb-2 text-[14px]">
                   Message
                 </label>
                 <textarea
@@ -141,7 +131,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-[#0A0F1C] border-2 border-[#00F6FF]/20 focus:border-[#00F6FF] text-white placeholder-gray-500 outline-none transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 rounded-[6px] bg-brand-surface border border-brand-border focus:border-brand-tertiary focus:ring-0 text-brand-primary placeholder:text-brand-tertiary outline-none transition-all duration-300 resize-none"
                   placeholder="Tell me about your project..."
                   required
                 />
@@ -149,9 +139,9 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#00F6FF] to-[#00C4CC] text-[#0A0F1C] font-semibold rounded-lg hover:shadow-[0_0_30px_rgba(0,246,255,0.5)] transition-all duration-300 transform hover:scale-105"
+                className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-brand-button text-brand-secondary font-medium rounded-button hover:bg-brand-button/80 hover:text-brand-primary transition-all duration-300"
               >
-                <Send size={20} />
+                <Send size={18} />
                 Send Message
               </button>
             </form>

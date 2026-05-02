@@ -8,43 +8,16 @@
   }
 
   body {
-    @apply bg-[#0A0F1C] text-white;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    @apply bg-brand-bg text-brand-primary font-matter;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-matter font-normal;
   }
 }
 
 @layer utilities {
-  .grid-background {
-    background-image:
-      linear-gradient(rgba(0, 246, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 246, 255, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -56,5 +29,16 @@
 
   .animate-fadeIn {
     animation: fadeIn 1s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
